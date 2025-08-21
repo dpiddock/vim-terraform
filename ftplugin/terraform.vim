@@ -47,8 +47,10 @@ if get(g:, 'terraform_fmt_on_save', 0)
   augroup vim.terraform.fmt
     autocmd!
     autocmd BufWritePre *.tf call terraform#fmt()
+    autocmd BufWritePre *.tofu call terraform#fmt()
     autocmd BufWritePre *.tfvars call terraform#fmt()
     autocmd BufWritePre *.tftest.hcl call terraform#fmt()
+    autocmd BufWritePre *.tofutest.hcl call terraform#fmt()
   augroup END
 endif
 
